@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Document Processor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>AI Document Processor</h1>
+    <p>Upload a PDF or text file to get an AI summary, key points and answers to your questions.</p>
+</header>
+
+<main>
+    <!-- 1. Upload -->
+    <section class="card">
+        <h2>Upload Document</h2>
+        <form id="uploadForm">
+            <label class="drop-zone" for="fileInput">
+                <span id="fileLabel">Click to choose a file (PDF, TXT, MD)</span>
+                <input type="file" id="fileInput" accept=".pdf,.txt,.md">
+            </label>
+            <button type="submit" id="uploadBtn">Analyze with AI</button>
+        </form>
+        <p id="message" class="message"></p>
+    </section>
+
+    <!-- 2. Result -->
+    <section class="card hidden" id="resultCard">
+        <div class="result-header">
+            <h2 id="resultTitle"></h2>
+            <span class="badge" id="resultType"></span>
+        </div>
+        <p class="meta" id="resultMeta"></p>
+
+        <h3>Summary</h3>
+        <p id="resultSummary"></p>
+
+        <h3>Key Points</h3>
+        <ul id="resultPoints"></ul>
+
+        <h3>Ask a Question</h3>
+        <form id="askForm" class="ask-form">
+            <input type="text" id="questionInput" placeholder="e.g. What is the total amount?">
+            <button type="submit" id="askBtn">Ask</button>
+        </form>
+        <div id="answers"></div>
+    </section>
+
+    <!-- 3. History -->
+    <section class="card">
+        <h2>History</h2>
+        <ul id="historyList" class="history"></ul>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
